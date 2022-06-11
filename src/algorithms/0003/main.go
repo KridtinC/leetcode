@@ -55,5 +55,6 @@ func lengthOfLongestSubstring(s string) int {
 //   cabcbb
 
 func main() {
+	// WIP
 	fmt.Println(lengthOfLongestSubstring("abcabcbb"))
 }
