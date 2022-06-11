@@ -1,27 +1,44 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func lengthOfLongestSubstring(s string) int {
-	var substr = map[string]int{}
+	// var substrmap = map[string]int{}
+	var substr string
+	var result string
 
 	for i := 0; i < len(s); i++ {
-		substr[s[:i+1]]++
-		substr[s[i:]]++
-	}
 
-	var max = 0
-	var maxstr string
-	for str, v := range substr {
-		if v > max {
-			max = v
-			maxstr = str
+		if strings.Contains(substr, string(s[i])) {
+			substr = string(s[i])
+		} else {
+			substr += string(s[i])
+
+			if len(substr) > len(result) {
+				result = substr
+			}
 		}
+
+		// substrmap[substr]++
+
+		// substrmap[s[i:]]++
 	}
 
-	fmt.Println(substr)
+	// var max = 0
+	// var maxstr string
+	// for str, v := range substrmap {
+	// 	if v > max {
+	// 		max = v
+	// 		maxstr = str
+	// 	}
+	// }
 
-	return len(maxstr)
+	// fmt.Println(result)
+
+	return len(result)
 }
 
 // abcabcbb

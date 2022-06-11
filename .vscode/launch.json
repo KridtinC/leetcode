@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceFolder}/src/algorithms/0003/main.go"
+            "program": "${workspaceFolder}/src/algorithms/0006/main.go"
         }
     ]
 }
